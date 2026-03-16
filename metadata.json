@@ -1,0 +1,5 @@
+{
+  "name": "TaskFlow IRC",
+  "description": "Asana/Trello-like board with IRC-style chat and calendar.",
+  "requestFramePermissions": []
+}
