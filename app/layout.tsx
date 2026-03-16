@@ -2,6 +2,8 @@ import type {Metadata} from 'next';
 import './globals.css'; // Global styles
 import { AppProvider } from '@/lib/store';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata: Metadata = {
   title: 'My Google AI Studio App',
   description: 'My Google AI Studio App',
