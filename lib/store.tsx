@@ -2,12 +2,40 @@
 
 import React, { createContext, useContext, useEffect, useState, useRef } from 'react';
 
+export type Priority = 'Low' | 'Medium' | 'High';
+
+export type ChecklistItem = {
+  id: string;
+  text: string;
+  completed: boolean;
+};
+
+export type Comment = {
+  id: string;
+  author: string;
+  text: string;
+  timestamp: number;
+};
+
+export type Tag = {
+  id: string;
+  name: string;
+  color: string;
+};
+
 export type Task = {
   id: string;
   title: string;
   description: string;
   assignees: string[];
   dueDate: string | null;
+  linkedTaskIds?: string[];
+  priority?: Priority;
+  checklist?: ChecklistItem[];
+  comments?: Comment[];
+  tagIds?: string[];
+  subtaskIds?: string[];
+  parentTaskId?: string;
 };
 
 export type Column = {
@@ -20,6 +48,7 @@ export type Board = {
   id: string;
   name: string;
   columns: Column[];
+  tags?: Tag[];
 };
 
 export type ChatMessage = {
